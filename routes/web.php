@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Yonet;
+use App\Http\Controllers\Yonet;  // web.blade.php view sayfasına ait Yonet adlı controller sayfasını ekledik 
+use App\Http\Controllers\Formislemleri; // form.blade.php view sayfasına ait Formislemleri adlı controller sayfasını ekledik
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get("/web", [Yonet::class,'site'])->name('Anasayfa');
+
+Route::get("/form", [Formislemleri::class,'gorunum']);
+
+Route::middleware('arakontrol')-> post("/form_sonuc", [Formislemleri::class,'sonuc'])->name('sonuc');
