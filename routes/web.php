@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Yonet;  // web.blade.php view sayfasına ait Yonet adlı controller sayfasını ekledik 
 use App\Http\Controllers\Formislemleri; // form.blade.php view sayfasına ait Formislemleri adlı controller sayfasını ekledik
+use App\Http\Controllers\Modelislemleri;
 use App\Http\Controllers\Veritabaniislemleri;
 
 /*
@@ -23,13 +24,14 @@ Route::get('/', function () {
 Route::get("/web", [Yonet::class,'site'])->name('Anasayfa');
 
 Route::get("/form", [Formislemleri::class,'gorunum']);
-
 Route::middleware('arakontrol')-> post("/form_sonuc", [Formislemleri::class,'sonuc'])->name('sonuc');
 
 Route::get("/ekle", [Veritabaniislemleri::class,'ekle']);
-
 Route::get("/guncelle", [Veritabaniislemleri::class,'guncelle']);
-
 Route::get("/sil", [Veritabaniislemleri::class,'sil']);
-
 Route::get("/listele", [Veritabaniislemleri::class,'bilgiler']);
+
+Route::get("/modellist", [Modelislemleri::class,'liste']);
+Route::get("/modelekle", [Modelislemleri::class,'ekle']);
+Route::get("/modelguncelle", [Modelislemleri::class,'guncelle']);
+Route::get("/modelsil", [Modelislemleri::class,'sil']);
