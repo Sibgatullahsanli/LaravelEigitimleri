@@ -28,7 +28,8 @@ class Veritabaniislemleri extends Controller
     // todo tablodan veri silme işlemi
     public function sil()
     {
-        DB::table("bilgiler")->where("id",1)->delete();
+        // DB::table("bilgiler")->where("id",1)->delete();
+        DB::table("iletisim")->delete();
     }
 
     // todo bi tablodaki verileri okumak için 

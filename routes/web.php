@@ -5,6 +5,7 @@ use App\Http\Controllers\Yonet;  // web.blade.php view sayfasına ait Yonet adl�
 use App\Http\Controllers\Formislemleri; // form.blade.php view sayfasına ait Formislemleri adlı controller sayfasını ekledik
 use App\Http\Controllers\Modelislemleri;
 use App\Http\Controllers\Veritabaniislemleri;
+use App\Http\Controllers\Iletisim;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,7 @@ Route::get("/modellist", [Modelislemleri::class,'liste']);
 Route::get("/modelekle", [Modelislemleri::class,'ekle']);
 Route::get("/modelguncelle", [Modelislemleri::class,'guncelle']);
 Route::get("/modelsil", [Modelislemleri::class,'sil']);
+
+Route::get("/iletisim", [Iletisim::class,'index']);
+Route::post("/iletisim-sonuc", [Iletisim::class,'ekleme'])->name("iletisim-sonuc");
+
