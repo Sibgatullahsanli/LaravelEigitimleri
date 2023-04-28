@@ -52,3 +52,16 @@ Route::get('/uye', function(){
 });
 
 Route::post('uye-kayit', [Uyelikislemleri::class, 'uyekayit'])->name('uyekayit');
+
+Route::get('/tema', function(){
+    return view('sayfalar.home');
+});
+Route::get('/galeri', function(){
+    return view('sayfalar.galeri');
+});
+Route::get('/hizmetler', function(){
+    return view('sayfalar.hizmetler');
+});
+Route::get('/kurumsal', function(){
+    return view('sayfalar.kurumsal');
+});
